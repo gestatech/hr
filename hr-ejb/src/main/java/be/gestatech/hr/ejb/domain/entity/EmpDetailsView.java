@@ -44,7 +44,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "EmpDetailsView.findByRegionName", query = "SELECT e FROM EmpDetailsView e WHERE e.regionName = :regionName")})
 public class EmpDetailsView implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 3705703897181332220L;
     @Basic(optional = false)
     @NotNull
     @Column(name = "employee_id", nullable = false)
