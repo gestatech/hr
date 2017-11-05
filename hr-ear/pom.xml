@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>hr</artifactId>
@@ -22,6 +23,29 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+                    <modules>
+                        <ejbModule>
+                            <groupId>be.gestatech</groupId>
+                            <artifactId>hr-ejb</artifactId>
+                            <!--bundleFileName>hr-ejb.jar</bundleFileName-->
+                        </ejbModule>
+                        <webModule>
+                            <groupId>be.gestatech</groupId>
+                            <artifactId>hr-web</artifactId>
+                            <contextRoot>/hr-web</contextRoot>
+                            <!--bundleFileName>hr-web.war</bundleFileName-->
+                        </webModule>
+                        <webModule>
+                            <groupId>be.gestatech</groupId>
+                            <artifactId>hr-rest</artifactId>
+                            <contextRoot>/hr-rest</contextRoot>
+                            <!--bundleFileName>hr-rest.war</bundleFileName-->
+                        </webModule>
+                    </modules>
+                    <defaultLibBundleDir>/lib</defaultLibBundleDir>
+                    <skinnyWars>false</skinnyWars>
+                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -29,13 +53,19 @@
         <dependency>
             <groupId>be.gestatech</groupId>
             <artifactId>hr-ejb</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>${project.version}</version>
             <type>ejb</type>
         </dependency>
         <dependency>
             <groupId>be.gestatech</groupId>
             <artifactId>hr-web</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>be.gestatech</groupId>
+            <artifactId>hr-rest</artifactId>
+            <version>${project.version}</version>
             <type>war</type>
         </dependency>
     </dependencies>
