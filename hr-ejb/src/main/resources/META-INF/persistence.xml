@@ -4,7 +4,6 @@
         <jta-data-source>jdbc/HrDS</jta-data-source>
         <class>be.gestatech.hr.ejb.domain.entity.Countries</class>
         <class>be.gestatech.hr.ejb.domain.entity.Departments</class>
-        <class>be.gestatech.hr.ejb.domain.entity.EmpDetailsView</class>
         <class>be.gestatech.hr.ejb.domain.entity.Employees</class>
         <class>be.gestatech.hr.ejb.domain.entity.Jobs</class>
         <class>be.gestatech.hr.ejb.domain.entity.Locations</class>
